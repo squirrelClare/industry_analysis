@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 12pt]{article}
+\usepackage{ctex}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{listings}
+\lstset{numbers=left, %设置行号位置
+		columns=flexible,
+  		breaklines,%自动换行
+        numberstyle=\tiny, %设置行号大小
+        keywordstyle=\color{blue}, %设置关键字颜色
+        commentstyle=\color[cmyk]{1,0,1,0}, %设置注释颜色
+        frame=single, %设置边框格式
+        escapeinside=``, %逃逸字符(1左面的键)，用于显示中文
+        %breaklines, %自动折行
+        extendedchars=false, %解决代码跨页时，章节标题，页眉等汉字不显示的问题
+        xleftmargin=2em,xrightmargin=2em, aboveskip=1em, %设置边距
+        tabsize=4, %设置tab空格数
+        showspaces=false %不显示空格
+       }
+%\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+%\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage[fleqn]{amsmath} % Required for some math elements
+\usepackage{bm}
+\usepackage{subfig}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+
+\captionsetup[subfigure]{labelformat=simple, listofformat=subsimple, farskip = 0pt}
+%%%% 段落首行缩进两个字 %%%%
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+\setlength{\parindent}{2em}  %中文缩进两个汉字位
+%%%% 下面的命令重定义页面边距，使其符合中文刊物习惯 %%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{0.63cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{14.66cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+
+%%%% 下面的命令设置行间距与段落间距 %%%%
+\linespread{1.4}
+% \setlength{\parskip}{1ex}
+\setlength{\parskip}{0.5\baselineskip}
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+%设置默认图像文件夹
+\graphicspath{{./picture/}}
+
+\newtheorem{Theorem}{定理}[section]%[section]
+\newtheorem{Proposition}{命题}[section]%[section]
+\newtheorem{Lemma}{引理}[section]%[section]
+\newtheorem{Definitions}{定义}[section]%[section]
+\newtheorem{Remark}{注}[section]%[section]
+%%%%%% 设置字号 %%%%%%
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+%%%% 设置 section 属性 %%%%
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+{-1.5ex \@plus -.5ex \@minus -.2ex}%
+{.5ex \@plus .1ex}%
+{\normalfont\xiaosanhao\CJKfamily{hei}}}
+\makeatother
+
+%%%% 设置 subsection 属性 %%%%
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{1}{\z@}%
+{-1.25ex \@plus -.5ex \@minus -.2ex}%
+{.4ex \@plus .1ex}%
+{\normalfont\sihao\CJKfamily{hei}}}
+\makeatother
+
+%%%% 设置 subsubsection 属性 %%%%
+\makeatletter
+\renewcommand\subsubsection{\@startsection{subsubsection}{1}{\z@}%
+{-1ex \@plus -.5ex \@minus -.2ex}%
+{.3ex \@plus .1ex}%
+{\normalfont\xiaosihao\CJKfamily{hei}}}
+\makeatother
+
+%%%% 段落首行缩进两个字 %%%%
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+\setlength{\parindent}{2em}  %中文缩进两个汉字位
+
+
+%%%% 下面的命令重定义页面边距，使其符合中文刊物习惯 %%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{0.63cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{14.66cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+
+%%%% 下面的命令设置行间距与段落间距 %%%%
+\linespread{1.4}
+% \setlength{\parskip}{1ex}
+\setlength{\parskip}{0.5\baselineskip}
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+\title{行业分析报告模板} % Title
+
+\author{张聪聪} % Author name
+\date{\today} % Date for the report
+\begin{document}
+\renewcommand{\figurename}{图}
+\maketitle % Insert the title, author and date
+%\begin{center}
+%\begin{tabular}{l r}
+%Date Performed: & January 1, 2012 \\ % Date the experiment was performed
+%Partners: & James Smith \\ % Partner names
+%& Mary Smith \\
+%Instructor: & Professor Smith % Instructor/supervisor
+%\end{tabular}
+%\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\bibliographystyle{apalike}
+
+%\bibliography{sample}
+
+%----------------------------------------------------------------------------------------
+\newpage
+\setcounter{page}{0}
+\thispagestyle{empty}
+%\tableofcontents
+\newpage
+\setcounter{page}{1}
+\section{我怎么理解这个新闻的？（谁？怎么样？为什么？结构）}
+ {\xiaowuhao \textcolor{blue}{（参与者都有谁，都是什么江湖地位）。（b影响级别给个评价）。（c参与方为什么做这个事情，理由是什么）——结构}}
+
+家乐福是最早进入中国的国际超市品牌，被苏宁收购是行业里影响很深远的一个事件。苏宁收购了家乐福以后，线下商业能力进一步增强，在电器、小店之外进军超市，说明了苏宁对线下商业的继续看好。
+\section{直接影响是什么？（过去、现在和将来结构）}
+ {\xiaowuhao \textcolor{blue}{（a行业过去发生了什么，可以搜几个新闻）。（b最近类似的新闻有哪些）。（c后面还会发生什么）——结构}}
+
+传统超市特别是海外品牌在国内零售正在进一步式微，互联网和线下商业的结合不断紧密的趋势在增强。线下商业的洗牌还将继续，可能的形式包括大型线下企业以收购或者参股的方式吸纳互联网公司，或者是互联网公司继续线下收购潮。
+\section{对没提到的相关方什么影响？他们会有什么反应？（类似的相关方还有谁？他们会怎么想怎么做？）}
+阿里巴巴、京东已经全面和线下超市配合了，那么没有参与的例如美团、例如小红书有可能会跟进苏宁的这种策略。沃尔玛、永辉和家乐福已经全面合作，我认为其他传统企业都可能成为被收购、互联网合作的标的。（你可以找找新闻）
+\section{二阶影响+中长期是什么？（相关方采取各自的行动后，又会造成什么影响？）}
+ {\xiaowuhao \textcolor{blue}{（a相关方行动后，会对谁造成影响、什么样的影响）。（b对行业、市场中长期影响有哪些？）——结构}}
+
+中小型的线下零售企业会加速站队，线下市场的品牌集中度会提高。相关投资领域的速度，因为标杆项目的出现：1会提速（因为大佬们出手了）；2定价透明（因为有几个成熟案例在前，定价方式有参照）。
+\section{我们该怎么做？}
+作为投资企业，我们要关注有哪些中型或者地区性的线下零售企业有投资价值，因为他们未来很有可能成为互联网企业投资的目标。可以通过先行潜伏，等待巨头接盘。（这个是我随口说的，大家理解我意图就好了）
+\end{document}
